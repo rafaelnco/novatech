@@ -5,7 +5,18 @@
     <meta charset="utf-8">
     <title>Nova Tech - Consultoria e Assistência Técnica em TI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
+    <link rel="icon" type="image/gif" href="data:image/ico;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAC2AEU+JozCAAAACXBI
+WXMAAABrAAAAawEOX1tRAAAAB3RJTUUH3wsZAy8pJ5UzBgAAAfVJREFUOMt1011ozXEYB/DP7+zY
+1qZYo8aaIoQh2YVi2jRzQ8KFKxcSi1pTyrymuUMJc7Vpd0puRCslUaS8tLmYTZIbL3krL2nLyjnn
+52L/2XHM7+55+/6e5/l+n+B/ryWuwiMQbNQVbk6WlsorKNMSNxCDjpgWHfkTi9rtjKVgb2y0L1aM
+hwI41DfNt7obaMDbBLi64LOP+Im5eCqrWU/4mjKkWGP7cdQniTWTFENVUgwrpc0bGyFnu5q7OxQP
+Xyso6MVWbMI5/MqLDegKfWMAKdtQZU/lHOWfepLEk7rDZkXu4bHucEBOEzIJwEwtsWxsB4NeYkES
+GPZ9/lXTXnW6GNeiM/Ef0x1OaYkX0Pani6AzGPQTpZMQ9NxA2yP3T1XJlWyQViGrSXS9kMbhyYWQ
+W2L5+V1aS1db3HNaiaycioKkTArvCpyjBfZ0zbsP2h3mYUueNk5LqU4LbotWmFDGFNGDPFqhWKb0
+qGBdYj9zKRwep/EycnnIRViEJ3/1UTRaj6HEqtQR02MAywyIrhS0PQML0SvIJr7yPC3M9kHDxC1k
+tOLFP7MH6+WcEfQLfij//DCR9Fld4c7ELcCQObgmqivctJz1ipwQNfhVHqVHXkvpl7Fr4hprvVFs
+jWg/BhI2vghuSXuvVpOl0rIjswR3sVjK1N9plJF1XmqvXQAAAABJRU5ErkJggg==">
+    <link async href='https://fonts.googleapis.com/css?family=Roboto:300,100,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -15,11 +26,16 @@
     }
     body{
         background:transparent;
-        font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
-        font-size:1em;
         color:white;
         margin:0;
         padding:0;
+    }
+    body, input {
+        /*font-family:Helvetica Neue,Helvetica,Arial,sans-serif;*/
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size:1em;
+
     }
     .swiper-container{
         width:100%;
@@ -42,9 +58,10 @@
 
         padding: 0 15%;
         box-sizing: border-box;
+
     }
     .swiper-container-v{
-            background:transparent;
+        background-color: rgba(0,0,0,0.4);
     }
     .hidden {
         display: none;
@@ -98,10 +115,25 @@
 
     .logo {
         width: 6em;
+        z-index: -1;
+        position: relative;
+    }
+
+    .image {
+        width: 12em;
+        left: calc( 50% - 12em / 2 );
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
     }
 
     article {
         text-shadow: 0 0 0.5em black;
+    }
+
+    article.history {
+        margin: auto;
+        padding-bottom: 50%;
     }
 
     article > header {
@@ -120,7 +152,7 @@
         box-sizing: border-box;
     }
 
-    
+
     @media (min-width: 800px) {
         body {
             font-size: 2em;
@@ -146,7 +178,6 @@
     <div class="swiper-container swiper-container-v">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                
                 <article>
                     <object type="image/svg+xml"
                         data="logo.min.svg" class="logo">
@@ -158,11 +189,23 @@
                 </article>
             </div>
             <div class="swiper-slide">
-                <article>
+                <article class="history">
                     <p>
-                        Seu PC deu zica? Funcionava até ontem e agora só liga embaixo de reza braba?<br><br>
+                        Seu PC deu zica? Funcionava até ontem e agora só liga embaixo de reza braba?
+                    </p>
+                    <object type="image/svg+xml"
+                        data="problem.min.svg" class="image">
+                    </object>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article class="history">
+                    <p>
                         A Nova Tech resolve seu problema com prontidão e em tempo hábil!
                     </p>
+                    <object type="image/svg+xml"
+                        data="solution.min.svg" class="image">
+                    </object>
                 </article>
             </div>
             <div class="swiper-slide">
@@ -180,7 +223,9 @@
                 </article>
             </div>
         </div>
-        <div class="swiper-pagination swiper-pagination-v"></div>
+        <div class="swiper-pagination swiper-pagination-v swiper-pagination-white"></div>
+        <div class="swiper-button-next swiper-button-next-v swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-prev-v swiper-button-white"></div>
     </div>
 
     <script src="script.js"></script>
@@ -188,8 +233,9 @@
     <script>
     var swiperV = new Swiper('.swiper-container-v', {
         pagination: '.swiper-pagination-v',
+        nextButton: '.swiper-button-next-v',
+        prevButton: '.swiper-button-prev-v',
         paginationClickable: true,
-        direction: 'vertical',
         grabCursor: 'true',
         mousewheelControl: true,
         spaceBetween: 0
