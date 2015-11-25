@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Nova Tech - Consultoria e Assistência Técnica em TI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    html,body{
+        position:relative;
+        height:100%;
+    }
+    body{
+        background:transparent;
+        font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-size:1em;
+        color:white;
+        margin:0;
+        padding:0;
+    }
+    .swiper-container{
+        width:100%;
+        height:100%;
+    }
+    .swiper-slide{
+        text-align:center;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:-webkit-flex;
+        display:flex;
+        -webkit-box-pack:center;
+        -ms-flex-pack:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        -webkit-align-items:center;
+        align-items:center;
+
+        padding: 0 15%;
+        box-sizing: border-box;
+    }
+    .swiper-container-v{
+            background:transparent;
+    }
+    .hidden {
+        display: none;
+    }
+
+    .homepage-hero-module {
+        border-right: none;
+        border-left: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .no-video .video-container video,
+    .touch .video-container video {
+        display: none;
+    }
+    .no-video .video-container .poster,
+    .touch .video-container .poster {
+        display: block !important;
+    }
+    .video-container {
+        position: relative;
+        bottom: 0%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background: #000;
+    }
+    .video-container .poster img {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+    }
+    .video-container .filter {
+        z-index: 100;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+    }
+    .video-container video {
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+    }
+    .video-container video.fillWidth {
+        width: 100%;
+    }
+
+    .logo {
+        width: 6em;
+    }
+
+    article {
+        text-shadow: 0 0 0.5em black;
+    }
+
+    article > header {
+        font-size: 1.8em;
+    }
+
+    article > p {
+        font-size: 1.2em;
+    }
+
+    article > form > * {
+        padding: 1%;
+        margin: 2%;
+        font-size: 1.2em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    
+    @media (min-width: 800px) {
+        body {
+            font-size: 2em;
+        }
+        .swiper-slide {
+            padding: 0 25%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="homepage-hero-module">
+        <div class="video-container">
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth" poster="video/art.jpg">
+                <source src="video/art.mp4" type="video/mp4" />
+                This browser does not support videos.
+                <source src="video/art.webm" type="video/webm" />
+                This browser does not support videos.
+            </video>
+        </div>
+    </div>
+    <div class="swiper-container swiper-container-v">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                
+                <article>
+                    <object type="image/svg+xml"
+                        data="logo.min.svg" class="logo">
+                    </object>
+                    <header>Nova Tech</header>
+                    <p>
+                        Consultora e Assistência Técnica em TI
+                    </p>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article>
+                    <p>
+                        Seu PC deu zica? Funcionava até ontem e agora só liga embaixo de reza braba?<br><br>
+                        A Nova Tech resolve seu problema com prontidão e em tempo hábil!
+                    </p>
+                </article>
+            </div>
+            <div class="swiper-slide">
+                <article>
+                    <form target="actioniframe"
+                        action="mail.php"
+                        method="post" class="contact-form">
+                        <p>Contate-nos e chegaremos até você!</p>
+                        <input placeholder="Nome"><br>
+                        <input placeholder="Email"><br>
+                        <input placeholder="Telefone"><br>
+                        <input placeholder="Serviço"><br>
+                        <button class="ladda-button" data-style="slide-left" data-color="green" type="submit"><span class="ladda-spinner"></span><span class="ladda-label">Contatar!</span></button>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-v"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+    var swiperV = new Swiper('.swiper-container-v', {
+        pagination: '.swiper-pagination-v',
+        paginationClickable: true,
+        direction: 'vertical',
+        grabCursor: 'true',
+        mousewheelControl: true,
+        spaceBetween: 0
+    });
+
+    Ladda.bind('.ladda-button');
+
+    $( document ).ready(function() {
+        scaleVideoContainer();
+
+        initBannerVideoSize('.video-container video');
+
+        $(window).on('resize', function() {
+            scaleVideoContainer();
+            scaleBannerVideoSize('.video-container video');
+        });
+
+    });
+
+    function scaleVideoContainer() {
+
+        var height = $(window).height();
+        var unitHeight = parseInt(height) + 'px';
+        $('.homepage-hero-module').css('height',unitHeight);
+
+    }
+
+    function initBannerVideoSize(element){
+
+        $(element).each(function(){
+            $(this).data('height', $(this).height());
+            $(this).data('width', $(this).width());
+        });
+
+        scaleBannerVideoSize(element);
+
+    }
+
+    function scaleBannerVideoSize(element){
+
+        var windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            videoWidth,
+            videoHeight;
+
+        console.log(windowHeight);
+
+        $(element).each(function(){
+            var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+            $(this).width(windowWidth);
+
+            if(windowWidth < 1000){
+                videoHeight = windowHeight;
+                videoWidth = videoHeight / videoAspectRatio;
+                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+                $(this).width(videoWidth).height(videoHeight);
+            }
+
+            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+        });
+    }
+    </script>
+
+</body>
+</html>
