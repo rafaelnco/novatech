@@ -34,7 +34,7 @@ jWg/BhI2vghuSXuvVpOl0rIjswR3sVjK1N9plJF1XmqvXQAAAABJRU5ErkJggg==">
         /*font-family:Helvetica Neue,Helvetica,Arial,sans-serif;*/
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
-        font-size:1em;
+        font-size:1.3em;
 
     }
     .swiper-container{
@@ -132,8 +132,9 @@ jWg/BhI2vghuSXuvVpOl0rIjswR3sVjK1N9plJF1XmqvXQAAAABJRU5ErkJggg==">
     }
 
     article.history {
-        margin: auto;
-        padding-bottom: 50%;
+    padding: 30% 0;
+    height: 100%;
+    box-sizing: border-box;
     }
 
     article > header {
@@ -147,9 +148,10 @@ jWg/BhI2vghuSXuvVpOl0rIjswR3sVjK1N9plJF1XmqvXQAAAABJRU5ErkJggg==">
     article > form > * {
         padding: 1%;
         margin: 2%;
-        font-size: 1.2em;
+        font-size: 1em;
         width: 100%;
         box-sizing: border-box;
+        opacity: 0.9;
     }
 
 
@@ -214,30 +216,34 @@ jWg/BhI2vghuSXuvVpOl0rIjswR3sVjK1N9plJF1XmqvXQAAAABJRU5ErkJggg==">
                         action="mail.php"
                         method="post" class="contact-form">
                         <p>Contate-nos e chegaremos até você!</p>
-                        <input placeholder="Nome"><br>
-                        <input placeholder="Email"><br>
-                        <input placeholder="Telefone"><br>
-                        <input placeholder="Serviço"><br>
+                        <input type="text" name="name" placeholder="Nome"><br>
+                        <input type="text" name="contact" placeholder="Email ou Telefone"><br>
+                        <input type="text" name="service" placeholder="Serviço"><br>
+                        <input type="text" name="deadline" placeholder="Prazo"><br>
                         <button class="ladda-button" data-style="slide-left" data-color="green" type="submit"><span class="ladda-spinner"></span><span class="ladda-label">Contatar!</span></button>
                     </form>
                 </article>
             </div>
         </div>
         <div class="swiper-pagination swiper-pagination-v swiper-pagination-white"></div>
-        <div class="swiper-button-next swiper-button-next-v swiper-button-white"></div>
-        <div class="swiper-button-prev swiper-button-prev-v swiper-button-white"></div>
+        <!-- <div class="swiper-button-next swiper-button-next-v swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-prev-v swiper-button-white"></div> -->
     </div>
+    <iframe id="uniqueiframe" name="actioniframe" style="display: none"></iframe>
 
     <script src="script.js"></script>
 
     <script>
     var swiperV = new Swiper('.swiper-container-v', {
         pagination: '.swiper-pagination-v',
-        nextButton: '.swiper-button-next-v',
-        prevButton: '.swiper-button-prev-v',
+        /*nextButton: '.swiper-button-next-v',
+        prevButton: '.swiper-button-prev-v',*/
         paginationClickable: true,
         grabCursor: 'true',
+        direction: 'vertical',
         mousewheelControl: true,
+        threshold: 20,
+        speed: 300,
         spaceBetween: 0
     });
 
