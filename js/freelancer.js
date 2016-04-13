@@ -4,9 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-var budget = 0;
-var $budget = $('.budget');
-var $budgetText = $('.budget-text');
+var budget = 0,
+    $budget = $('.budget'),
+    $budgetText = $('.budget-text'),
+    $form = $('#contactForm'),
+    $alerts = $('#alerts');
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -48,4 +50,10 @@ function updateBudget(checked, price) {
     } else {
         $budget.addClass('hidden');
     }
+}
+
+
+
+function send(message) {
+    $alerts.append('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>'+message+'</span></div>')
 }

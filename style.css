@@ -285,6 +285,15 @@ section.success {
     flex-wrap: wrap;
 }
 
+#alerts {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    z-index: 9999;
+}
+
 #contactForm,
 #contactForm input {
     text-align: center;
