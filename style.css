@@ -125,8 +125,6 @@ header .intro-text .skills {
     font-weight: 300;
 }
 
-.navbar-brand > .badge {
-}
 
 @media(min-width:768px) {
     header .container {
@@ -227,7 +225,7 @@ section.success {
 }
 
 .portfolio-link > .badge {
-    font-size: 2em;
+    font-size: 2.5em;
     position: absolute;
     right: 0;
 }
@@ -421,24 +419,25 @@ footer .footer-below {
     outline: 0;
 }
 
-.scroll-top {
+.budget {
     z-index: 1049;
     position: fixed;
     right: 2%;
     bottom: 2%;
-    width: 50px;
-    height: 50px;
+    width: auto;
+/*    height: 50px;*/
 }
 
-.scroll-top .btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+.budget .btn {
+/*    width: 50px;
+    height: 50px;*/
+    padding: 0.5em;
+    border-radius: 0.25em;
     font-size: 20px;
     line-height: 28px;
 }
 
-.scroll-top .btn:focus {
+.budget .btn:focus {
     outline: 0;
 }
 

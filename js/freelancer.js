@@ -5,7 +5,8 @@
  */
 
 var budget = 0;
-var $budget = $('.navbar-brand .badge');
+var $budget = $('.budget');
+var $budgetText = $('.budget-text');
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -13,7 +14,7 @@ $(function() {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, 700, 'easeInOutExpo');
         event.preventDefault();
     });
 });
@@ -41,7 +42,7 @@ $('.navbar-collapse ul li a').click(function() {
 
 function updateBudget(checked, price) {
     budget += checked ? price : -price;
-    $budget.text('R$ '+budget);
+    $budgetText.text('R$ '+budget);
     if(budget != 0) {
         $budget.removeClass('hidden');
     } else {
