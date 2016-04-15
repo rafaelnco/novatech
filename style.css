@@ -11,8 +11,16 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+html, body { height: 100%; margin: 0; padding: 0; }
+#map { height: 100%; }
+
 body {
     overflow-x: hidden;
+}
+
+.row {
+    padding: 1em;
 }
 
 p {
@@ -193,7 +201,6 @@ section {
 }
 
 section h2 {
-    margin: 0;
     font-size: 2em;
 }
 
@@ -292,6 +299,16 @@ section.success {
     right: 0;
     padding: 1em;
     z-index: 9999;
+}
+
+#maps {
+    padding: 0;
+    margin: 0;
+    height: 50%;
+}
+
+#info {
+    
 }
 
 #contactForm,
