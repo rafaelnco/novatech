@@ -95,6 +95,7 @@ hr.star-primary:after {
 }
 
 header {
+    height: 100vh;
     text-align: center;
     color: #fff;
 /*    background: #18bc9c;*/
@@ -118,6 +119,10 @@ header img {
 
 header .logo {
     width: 30%;
+}
+
+header .intro-text {
+    text-shadow: 0 0 1em black;
 }
 
 header .intro-text .name {
@@ -354,7 +359,7 @@ section.success {
     position: relative;
     margin-bottom: 0;
     padding-bottom: .5em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #555;
 }
 
 .floating-label-form-group input,
@@ -390,7 +395,7 @@ section.success {
 
 .floating-label-form-group::not(:first-child) {
     padding-left: 14px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #555;
 }
 
 .floating-label-form-group-with-value label {
@@ -403,7 +408,7 @@ section.success {
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #555;
 }
 
 footer {
